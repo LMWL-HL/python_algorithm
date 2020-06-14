@@ -10,10 +10,14 @@ def bubbleSort(lyst):
     """
     print("My solution:")
     for i in range(len(lyst)-2):
+        swapped = False
         for j in range(len(lyst)-1-i):
             if lyst[j] > lyst[j+1]:
                 swap(lyst, j, j+1)
+                swapped = True
             print(lyst)
+        # print(swapped)
+        if not swapped: break
 
 def bubbleSort_example(lyst):
     """
@@ -22,12 +26,16 @@ def bubbleSort_example(lyst):
     print("Example in book:")
     n = len(lyst)
     while n > 1:
+        swapped = False
         i = 1
         while i < n:
             if lyst[i] < lyst[i - 1]:
                 swap(lyst, i, i-1)
+                swapped = True
             i += 1
             print(lyst)
+        # print(swapped)
+        if not swapped: return
         n -= 1
 
 
